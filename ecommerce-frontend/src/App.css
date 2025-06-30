@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body, html {
+  margin: 0; padding: 0;
+  height: 100%;
+  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-wrapper {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(253, 160, 133, 0.4);
+  width: 420px;
+  padding: 40px 50px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -50px; right: -50px;
+  width: 150px; height: 150px;
+  background: rgba(253, 160, 133, 0.3);
+  border-radius: 50%;
+  filter: blur(60px);
+  z-index: 0;
+}
+
+.login-wrapper::after {
+  content: '';
+  position: absolute;
+  bottom: -60px; left: -40px;
+  width: 180px; height: 180px;
+  background: rgba(246, 211, 101, 0.3);
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 0;
+}
+
+.login-title {
+  font-weight: 600;
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: #ff5722;
+  position: relative;
+  z-index: 1;
+}
+
+.login-subtitle {
+  color: #666;
+  margin-bottom: 35px;
+  font-size: 14px;
+  font-weight: 400;
+  position: relative;
+  z-index: 1;
+}
+
+.input-field {
+  width: 100%;
+  padding: 15px 18px;
+  margin-bottom: 22px;
+  border-radius: 14px;
+  border: 1.8px solid #ffb07c;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.input-field:focus {
+  border-color: #ff5722;
+  box-shadow: 0 0 10px rgba(255, 87, 34, 0.6);
+  outline: none;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 16px 0;
+  background: linear-gradient(90deg, #ff5722, #ff8a50);
+  border: none;
+  border-radius: 16px;
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(255, 87, 34, 0.5);
+  transition: background 0.4s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.login-btn:hover {
+  background: linear-gradient(90deg, #ff8a50, #ff5722);
+  box-shadow: 0 10px 25px rgba(255, 87, 34, 0.7);
+}
+
+.error-msg {
+  color: #d32f2f;
+  margin-top: 18px;
+  font-weight: 600;
+  font-size: 15px;
+  position: relative;
+  z-index: 1;
+}
+
+/* shopping cart icon */
+.cart-icon {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 36px;
+  color: #ff5722;
+  z-index: 1;
+  user-select: none;
+}

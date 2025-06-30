@@ -1,0 +1,33 @@
+.toggle-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.toggle-btn {
+  flex: 1;
+  padding: 12px 0;
+  border: 2px solid #ff5722;
+  background-color: transparent;
+  color: #ff5722;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.toggle-btn:hover {
+  background-color: #ffad88;
+  color: white;
+}
+
+.toggle-btn.active {
+  background: linear-gradient(90deg, #ff5722, #ff8a50);
+  color: white;
+  box-shadow: 0 6px 20px rgba(255, 87, 34, 0.6);
+  border-color: transparent;
+  pointer-events: none;
+}
