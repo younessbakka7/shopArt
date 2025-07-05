@@ -1,38 +1,39 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import './App.css';
+import './App.css'; // نفس ملف الستايل الموجود عندك
 
-function App() {
+function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
     try {
-      const response = await axios.post('http://127.0.0.1:8000/api/login', { email, password });
+      const response = await axios.post('http://127.0.0.1:8000/api/login', {
+        email,
+        password
+      });
+
+      // حفظ التوكن والرول
       localStorage.setItem('token', response.data.access_token);
-      setIsLoggedIn(true);
+      localStorage.setItem('role', response.data.user.role);
+
+      // التوجيه حسب الدور
+      if (response.data.user.role === 'admin') {
+        navigate('/admin-dashboard');
+      } else {
+        navigate('/dashboard');
+      }
+
     } catch (err) {
+      console.log(err.response?.data);
       setError('Login failed. Please check your email and password.');
     }
   };
-
-  const handleLogout = () => {
-    localStorage.removeItem('token');
-    setIsLoggedIn(false);
-  };
-
-  if (isLoggedIn) {
-    return (
-      <div className="login-wrapper" style={{ position: 'relative' }}>
-        <h2 className="login-title">Welcome to the Store!</h2>
-        <button className="login-btn" onClick={handleLogout}>Logout</button>
-      </div>
-    );
-  }
 
   return (
     <div className="login-wrapper">
@@ -63,4 +64,4 @@ function App() {
   );
 }
 
-export default App;
+export default Login;

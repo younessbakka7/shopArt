@@ -21,6 +21,7 @@ class AuthController extends Controller
             'name' => $request->name,
             'email'=> $request->email,
             'password'=> Hash::make($request->password),
+            'role' => 'client'  
         ]);
 
         return response()->json(['message' => 'User created successfully'], 201);
@@ -47,6 +48,7 @@ class AuthController extends Controller
         return response()->json([
             'access_token' => $token,
             'token_type' => 'Bearer',
+             'user' => $user,
         ]);
     }
 

@@ -1,0 +1,59 @@
+
+
+/* components/admin/AdminStyle.css */
+.admin-dashboard {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  width: 100vw;
+}
+
+.sidebar {
+  width: 220px;
+  background-color: #1d1d1d;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar .logo {
+  font-size: 24px;
+  color: orange;
+  margin-bottom: 30px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.sidebar ul li a:hover {
+  color: orange;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  background-color: white;
+}
+
+.header {
+  background-color: orange;
+  padding: 15px 20px;
+  border-radius: 8px;
+  color: white;
+  font-size: 24px;
+}
+
+.dashboard-content {
+  margin-top: 20px;
+}
